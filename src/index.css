@@ -357,11 +357,66 @@ body, html {
     display: flex;
     flex-direction: column;
     height: auto;
+    overflow-y: visible;
+    padding-bottom: 20px;
+  }
+  .app-ecosystem {
     overflow-y: auto;
-    padding-bottom: 100px;
   }
   .box-balance, .box-insights, .box-chart, .box-pie, .box-transactions {
     width: 100%;
     min-height: 300px;
+  }
+}
+
+@media(max-width: 768px) {
+  .glass-dock {
+    border-radius: 20px;
+    padding: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+  .dock-item {
+    padding: 8px 12px;
+  }
+  .dock-divider {
+    display: none;
+  }
+  .insights-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+  .insight-pill {
+    width: 100%;
+    padding: 16px;
+    align-items: center;
+    text-align: center;
+  }
+  .app-ecosystem {
+    padding: 10px;
+  }
+  .tx-header > div {
+    flex-wrap: wrap;
+    width: 100%;
+  }
+  .portal-box {
+    width: 90%;
+    padding: 20px;
+  }
+  .input-row {
+    flex-direction: column;
+    gap: 0;
+  }
+  .tx-card {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .tx-rhs {
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
   }
 }

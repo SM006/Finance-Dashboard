@@ -156,8 +156,11 @@ export default function App() {
       <div className="app-ecosystem">
         {/* Dock Navigation */}
         <div className="glass-dock">
-          <div className="dock-item">
-            <div style={{ width: 24, height: 24, borderRadius: '50%', background: 'white' }} />
+          <div className="dock-item" style={{ cursor: 'default', opacity: 1, gap: '8px' }}>
+            <div style={{ background: 'var(--accent)', borderRadius: '8px', padding: '6px', display: 'flex', alignItems: 'center', justifyContent: 'center', border: '1px solid var(--glass-border)' }}>
+              <Wallet size={16} color="var(--text-primary)" />
+            </div>
+            <span style={{ fontWeight: 800, fontSize: '15px', letterSpacing: '1px' }}>ZORVYN</span>
           </div>
           <div className="dock-divider" />
           <div className={`dock-item ${activeTab === 'dashboard' ? 'active' : ''}`} onClick={() => setActiveTab('dashboard')}>
@@ -275,13 +278,13 @@ export default function App() {
                       paddingAngle={3} 
                       dataKey="value" 
                       stroke="none" 
-                      label={({ cx, cy, midAngle, innerRadius, outerRadius, name, fill }) => {
+                      label={({ cx, cy, midAngle, innerRadius, outerRadius, name }) => {
                         const RADIAN = Math.PI / 180;
                         const radius = outerRadius * 1.35;
                         const x = cx + radius * Math.cos(-midAngle * RADIAN);
                         const y = cy + radius * Math.sin(-midAngle * RADIAN);
                         return (
-                          <text x={x} y={y} fill={fill} textAnchor={x > cx ? 'start' : 'end'} dominantBaseline="central" fontSize={11} fontWeight={600}>
+                          <text x={x} y={y} fill="var(--text-primary)" textAnchor={x > cx ? 'start' : 'end'} dominantBaseline="central" fontSize={11} fontWeight={600}>
                             {name}
                           </text>
                         );
